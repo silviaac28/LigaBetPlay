@@ -49,6 +49,8 @@ public class viewEstadio {
                     scannerEstadio.nextLine();
 
                     controladorEstadio.estadios.put(codigoEstadio, estadios);
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 2:
@@ -64,6 +66,8 @@ public class viewEstadio {
                         Estadio visualizarEstadios = controladorEstadio.estadios.get(codEstadio);
                         System.out.println("Nombre del estadio : " + visualizarEstadios.getNombre());
                     }
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 5:

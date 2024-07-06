@@ -67,9 +67,9 @@ public class viewCalendarioPartidos {
 
                     System.out.println("Los partidos que se encuentran entre la fecha " + fechaPartidoInicio + " y la fecha " + fechaPartidoFin);
 
-                    if(partidosConsulta.getFecha() >= date || partidosConsulta.getFecha() <= date1){
+                    // if(partidosConsulta.getFecha() >= date || partidosConsulta.getFecha() <= date1){
                         
-                    }
+                    // }
                     
                     ConsoleUtils.pause();
                     break;

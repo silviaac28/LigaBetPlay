@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Lesion {
     private int id;
-    private int idJugador;
+    private String jugador;
     private String tipo;
     private String gravedad;
     private Date fechaInicioLesion;
@@ -13,9 +13,10 @@ public class Lesion {
     public Lesion() {
     }
 
-    public Lesion(int id, int idJugador, String tipo, String gravedad, Date fechaInicioLesion, Date fechaFinRecuperacion) {
+    public Lesion(int id, String jugador, String tipo, String gravedad, Date fechaInicioLesion,
+            Date fechaFinRecuperacion) {
         this.id = id;
-        this.idJugador = idJugador;
+        this.jugador = jugador;
         this.tipo = tipo;
         this.gravedad = gravedad;
         this.fechaInicioLesion = fechaInicioLesion;
@@ -30,12 +31,12 @@ public class Lesion {
         this.id = id;
     }
 
-    public int getIdJugador() {
-        return idJugador;
+    public String getJugador() {
+        return jugador;
     }
 
-    public void setIdJugador(int idJugador) {
-        this.idJugador = idJugador;
+    public void setJugador(String jugador) {
+        this.jugador = jugador;
     }
 
     public String getTipo() {
@@ -54,11 +55,11 @@ public class Lesion {
         this.gravedad = gravedad;
     }
 
-    public Date getfechaInicioLesion() {
+    public Date getFechaInicioLesion() {
         return fechaInicioLesion;
     }
 
-    public void setfechaInicioLesion(Date fechaInicioLesion) {
+    public void setFechaInicioLesion(Date fechaInicioLesion) {
         this.fechaInicioLesion = fechaInicioLesion;
     }
 
@@ -69,5 +70,7 @@ public class Lesion {
     public void setFechaFinRecuperacion(Date fechaFinRecuperacion) {
         this.fechaFinRecuperacion = fechaFinRecuperacion;
     }
+
+   
 
 }

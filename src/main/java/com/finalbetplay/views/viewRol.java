@@ -32,6 +32,8 @@ public class viewRol {
 
             switch (choice) {
                 case 1:
+                    ConsoleUtils.cleanScreen();
+
 
                     String codigoRol = null;
                     Rol rols = new Rol();
@@ -48,11 +50,13 @@ public class viewRol {
 
                     controladorRol.rols.put(codigoRol, rols);
                     
-                    
+                    ConsoleUtils.pause();
                     
                     break;
 
                 case 2:
+                    ConsoleUtils.cleanScreen();
+
 
                     Rol listarRol = new Rol();
                     System.out.println("Lista de Roles");
@@ -61,9 +65,13 @@ public class viewRol {
                         System.out.println("Nombre Rol: " + listarRol.getNombre() + " Permisos Rol: " + listarRol.getListapPermisos());
                     }
 
+                    ConsoleUtils.pause();
+
                     break;
                 
                 case 3:
+                    ConsoleUtils.cleanScreen();
+
 
                     System.out.println("Lista Permisos");
                     String codigoRolPermiso = null;
@@ -91,6 +99,8 @@ public class viewRol {
                     permisosParaRol = controladorRol.permisos.get(codigoPermisoRol);
 
                     rolParaPermiso.addPermiso(permisosParaRol);
+
+                    ConsoleUtils.pause();
 
                     break;
 

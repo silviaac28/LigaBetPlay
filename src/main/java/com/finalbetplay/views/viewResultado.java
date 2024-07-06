@@ -39,6 +39,8 @@ public class viewResultado {
 
             switch (choice) {
                 case 1:
+                    ConsoleUtils.cleanScreen();
+
                     // NUEVO RESULTADO
                     Resultado resultados = new Resultado();
                     String codigoResultado = null;
@@ -71,9 +73,14 @@ public class viewResultado {
 
                     resultados.setPartido(Integer.parseInt(codigoResultado)); // Asignar ID del partido al resultado
                     controladorResultado.resultados.put(codigoResultado, resultados);
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 2:
+                    ConsoleUtils.cleanScreen();
+
                     // INGRESAR TARJETAS
                     Jugador listarJugadores = new Jugador();
                     Jugador jugadores = new Jugador();
@@ -127,9 +134,15 @@ public class viewResultado {
                     controladorResultado.tarjetas.add(tarjeta);
 
                     System.out.println("Tarjeta registrada exitosamente.");
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 4:
+
+                    ConsoleUtils.cleanScreen();
+
 
                     for (String codigoResultado1 : controladorResultado.resultados.keySet()) {
                         Resultado resultado = controladorResultado.resultados.get(codigoResultado1);
@@ -159,6 +172,9 @@ public class viewResultado {
                         }
                         System.out.println("-------------------------");
                     }
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 5:

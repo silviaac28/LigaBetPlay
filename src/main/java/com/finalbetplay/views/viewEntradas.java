@@ -33,6 +33,9 @@ public class viewEntradas {
 
             switch (choice) {
                 case 1:
+                
+                    ConsoleUtils.cleanScreen();
+
                     
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     String codigoEntradas = null;
@@ -103,10 +106,13 @@ public class viewEntradas {
 
                     controladorEntradas.entradas.put(codigoEntradas, entradas);
                     
+                    ConsoleUtils.pause();
 
                     break;
             
                 case 2:
+
+                    ConsoleUtils.cleanScreen();
 
                     Entrada entradaListar = new Entrada();
 
@@ -115,6 +121,8 @@ public class viewEntradas {
                         System.out.println("Codigo Entrada: " + codEntradas +  " Ubicación : " + entradaListar.getUbicacion() );
 
                     }
+
+                    ConsoleUtils.pause();
 
                     break;
 

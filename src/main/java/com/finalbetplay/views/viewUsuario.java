@@ -31,6 +31,8 @@ public class viewUsuario {
 
             switch (choice) {
                 case 1:
+                    ConsoleUtils.cleanScreen();
+
                     
                     Usuario usuario = new Usuario();
                     String codigoUsuario = null;
@@ -66,9 +68,12 @@ public class viewUsuario {
 
                     controladorUsuarios.usuarios.put(codigoUsuario, usuario);
 
+                    ConsoleUtils.pause();
+
                     break;
             
                 case 2:
+                    ConsoleUtils.cleanScreen();
 
                     Usuario listarUsuario = new Usuario();
                     for (String codUsuario : controladorUsuarios.usuarios.keySet()) {
@@ -76,6 +81,8 @@ public class viewUsuario {
                         System.out.println("Cod Usuario: " + codUsuario + " Nombre Usuario : " + listarUsuario.getNombre() + 
                         " Rol Usuario: " + listarUsuario.getRol());
                     }
+
+                    ConsoleUtils.pause();
 
                     break;
 

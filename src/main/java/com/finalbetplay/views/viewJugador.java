@@ -50,6 +50,8 @@ public class viewJugador {
                     jugadores.setNumeroCamiseta(scannerJugador.nextInt());
 
                     controladorJugador.jugadores.put(codigoJugador, jugadores);
+                    ConsoleUtils.pause();
+
                     break;
 
 
@@ -59,6 +61,8 @@ public class viewJugador {
                         jugador = controladorJugador.jugadores.get(codJugador);
                         System.out.println("Nombre: " + jugador.getNombre());
                     }
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 5:

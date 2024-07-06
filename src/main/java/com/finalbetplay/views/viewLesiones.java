@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Lesion;
+import com.finalbetplay.clases.Jugador;
 import com.finalbetplay.utils.ConsoleUtils;
 
 public class viewLesiones {
@@ -37,6 +38,9 @@ public class viewLesiones {
                 case 1:
                     ConsoleUtils.cleanScreen();
 
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+
                     Lesion lesiones = new Lesion();
                     System.out.println("Ingrese el código de la lesión: ");
                     String codigoLesion = scannerLesiones.nextLine();
@@ -45,11 +49,22 @@ public class viewLesiones {
                     scannerLesiones.nextLine();
 
                     // SELECCION JUGADOR 
+                    Jugador listarJugadores = new Jugador();
+                    Jugador jugadores = new Jugador();
+                    String codigoJugadorSeleccionado = null;
+                    System.out.println("-------------------------");
+                    System.out.println("LISTADO DE JUGADORES: ");
+                    for (String codJugadores : controladorLesion.jugadores.keySet()) {
+                        listarJugadores = controladorLesion.jugadores.get(codJugadores);
+                        System.out.println("Codigo: " + codJugadores + " Nombre: " + listarJugadores.getNombre() );
+                    }
+                    System.out.print("Ingrese el Código del jugador lesionado: ");
+                    codigoJugadorSeleccionado = scannerLesiones.nextLine();
+                    listarJugadores = controladorLesion.jugadores.get(codigoJugadorSeleccionado);
 
-
-
-                    //
-
+                    System.out.println("Usted ha seleccionado el jugador: " + listarJugadores.getNombre());
+                    lesiones.setJugador(listarJugadores.getNombre());
+                    /// fin SELECCION JUGADOR
 
                     System.out.println("Ingrese el tipo de lesión: ");
                     lesiones.setTipo(scannerLesiones.nextLine());
@@ -57,41 +72,55 @@ public class viewLesiones {
                     lesiones.setGravedad(scannerLesiones.nextLine());
 
                     // FECHA INICIO
-                    while (true) {
-                        System.out.println("Ingrese la fecha de inicio de la lesión (DD/MM/AAAA): ");
-                        String fechaInicioLesion = scannerLesiones.nextLine();
-                        try {
-                            Date fecha = dateFormatter.parse(fechaInicioLesion);
-                            lesiones.setfechaInicioLesion(fecha);
-                            break;
-                        } catch (ParseException e) {
-                            System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
-                        }
+                    
+                    System.out.println("Ingrese la fecha de inicio de la lesión (DD/MM/AAAA): ");
+                        String fechaInicioLesionStr = scannerLesiones.nextLine();
+                       
+                    try {
+                        Date fechaInicioLesion = new Date(dateFormat.parse(fechaInicioLesionStr).getTime());
+                        lesiones.setFechaInicioLesion(fechaInicioLesion);
+                    } catch (ParseException e) {
+                        System.out.println("Fecha inválida. Por favor, use el formato yyyy-MM-dd.");
+                    }
+                    
+                    // FECHA FIN
+                    
+                    System.out.println("Ingrese la fecha de fin de la recuperación (DD/MM/AAAA): ");
+                        String fechaFinRecuperacionStr = scannerLesiones.nextLine();
+                       
+                    try {
+                        Date fechaFinRecuperacion = new Date(dateFormat.parse(fechaFinRecuperacionStr).getTime());
+                        lesiones.setFechaFinRecuperacion(fechaFinRecuperacion);
+                    } catch (ParseException e) {
+                        System.out.println("Fecha inválida. Por favor, use el formato yyyy-MM-dd.");
                     }
 
-                    // while (true) {
-                    //     System.out.println("Ingrese la fecha de fin de la recuperación (DD/MM/AAAA): ");
-                    //     String fechaFin = scannerPatrocinio.nextLine();
-                    //     try {
-                    //         Date fecha = dateFormatter.parse(fechaFin);
-                    //         patrocinios.setFechaFin(fecha);
-                    //         break;
-                    //     } catch (ParseException e) {
-                    //         System.out.println("Fecha no válida. Por favor, ingrese la fecha en el formato DD/MM/AAAA.");
-                    //     }
-                    // }
+                    controladorLesion.lesiones.put(codigoLesion, lesiones);
+                    System.out.println("Lesión registrada exitosamente.");
 
-                    // controladorPatrocinio.patrocinios.put(codigoPatrocinio, patrocinios);
-                    // System.out.println("Patrocinio agregado exitosamente.");
+                    ConsoleUtils.pause();
 
-                    // ConsoleUtils.pause();
+                    break;
 
-                    // break;
-            
+                case 2:
+                    ConsoleUtils.cleanScreen();
+                    break;
+
+                case 3:
+                    ConsoleUtils.cleanScreen();
+                    break;
+
+                case 4:
+                    ConsoleUtils.cleanScreen();
+                    break;
+
+                case 5:
+                    return;
+
+                default:
+                    System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+                    break;
+            }
         }
-
-       }
     }
-
-
 }

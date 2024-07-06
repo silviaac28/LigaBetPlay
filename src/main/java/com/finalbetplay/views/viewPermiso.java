@@ -30,6 +30,9 @@ public class viewPermiso {
             switch (choice) {
                 case 1:
                     
+                    ConsoleUtils.cleanScreen();
+
+
                     Permiso permisos = new Permiso();
                     String codigoPermiso = null;
 
@@ -45,15 +48,21 @@ public class viewPermiso {
 
                     controladorPermisos.permisos.put(codigoPermiso, permisos);
 
+                    ConsoleUtils.pause();
+
                     break;
             
                 case 2:
+
+                    ConsoleUtils.cleanScreen();
 
                     Permiso verPermisos = new Permiso();
                     for (String codPermisos : controladorPermisos.permisos.keySet()) {
                         verPermisos = controladorPermisos.permisos.get(codPermisos);
                         System.out.println("Cod Permiso: " + codPermisos + " Id: " + verPermisos.getId());
                     }
+
+                    ConsoleUtils.pause();
                     
                     break;
 

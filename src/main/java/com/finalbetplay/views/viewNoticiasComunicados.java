@@ -34,6 +34,8 @@ public class viewNoticiasComunicados {
 
             switch (choice) {
                 case 1:
+                    ConsoleUtils.cleanScreen();
+
 
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     Comunicacion comunicaciones = new Comunicacion();
@@ -63,10 +65,14 @@ public class viewNoticiasComunicados {
                     }
 
                     controladorComunicaciones.comunicaciones.put(codigoComunicaciones, comunicaciones);
+                    ConsoleUtils.pause();
 
                     break;
             
                 case 2:
+
+                    ConsoleUtils.cleanScreen();
+
 
                     Comunicacion listarComunicaciones = new Comunicacion();
                     for (String codComunicaciones : controladorComunicaciones.comunicaciones.keySet()) {
@@ -81,10 +87,13 @@ public class viewNoticiasComunicados {
                         System.out.println("FECHA PUBLICACIÓN: ");
                         System.out.println(listarComunicaciones.getFechaPublicacion());
                     }
+                    ConsoleUtils.pause();
 
                     break;
 
                 case 3:
+                    ConsoleUtils.cleanScreen();
+
 
                     SimpleDateFormat dateFormatedit = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -115,11 +124,14 @@ public class viewNoticiasComunicados {
                     }
 
                     controladorComunicaciones.comunicaciones.put(codComunicacionEditar, comunicacionEditar);
+                    ConsoleUtils.pause();
 
 
                     break;
 
                 case 4:
+
+                    ConsoleUtils.cleanScreen();
 
                     String codComunicacionEliminar = null;
                     Comunicacion comunicacionEliminar = new Comunicacion();
@@ -130,6 +142,7 @@ public class viewNoticiasComunicados {
 
                     controladorComunicaciones.comunicaciones.remove(codComunicacionEditar);
                     System.out.println("Usted ha eliminado la comunicación con el titulo: " + comunicacionEliminar.getTitulo());
+                    ConsoleUtils.pause();
 
                     break;
 

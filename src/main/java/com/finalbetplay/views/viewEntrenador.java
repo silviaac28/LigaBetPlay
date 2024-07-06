@@ -77,6 +77,7 @@ public class viewEntrenador {
                     break;
 
                 case 3:
+                
                     return;
                     
 

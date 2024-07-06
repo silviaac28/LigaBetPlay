@@ -41,6 +41,8 @@ public class viewEquipos {
 
                 case 1:
 
+                    ConsoleUtils.cleanScreen();
+
                     Equipo equipos = new Equipo();
                     Jugador jugadores = new Jugador();
                     String codigoEquipo = null;
@@ -60,10 +62,13 @@ public class viewEquipos {
                     equipos.setCiudad(scannerEquipos.nextLine());
                 
                     controladorEquipo.equipos.put(codigoEquipo, equipos);
+                    ConsoleUtils.pause();
 
                     break;
 
                 case 2: 
+
+                    ConsoleUtils.cleanScreen();
 
                     Equipo equipoActualizar = new Equipo();
                     String codEquipoActualizar = null;
@@ -92,8 +97,14 @@ public class viewEquipos {
                 
                     System.out.println("Cuál es el cod estadio: ");
                     equipoActualizar.setEstadio(scannerEquipos.nextLine());
+                    ConsoleUtils.pause();
+
+                    break;
 
                 case 3:
+
+                    ConsoleUtils.cleanScreen();
+
                     Equipo listarEquipos = new Equipo();
 
                     System.out.println("Listado de equipos: ");
@@ -103,10 +114,14 @@ public class viewEquipos {
                     }
 
                     System.out.println("El estadio que le pertenece al equipo : " + listarEquipos.getNombre() +  " es: " + listarEquipos.getEstadio());
+                    ConsoleUtils.pause();
 
                     break;
                 
                 case 4:
+
+                    ConsoleUtils.cleanScreen();
+
                     
                     Equipo equipoEliminar = new Equipo();
                     String codEquipoEliminar = null;
@@ -118,10 +133,14 @@ public class viewEquipos {
                     controladorEquipo.equipos.remove(codEquipoEliminar);
 
                     System.out.println("El equipo que usted ha eliminado es: " + equipoEliminar.getNombre());
+                    ConsoleUtils.pause();
 
                     break;
 
                 case 5:
+
+                    ConsoleUtils.cleanScreen();
+
                     Jugador listarJugadores = new Jugador();
                     Equipo equipoSeleccionado = new Equipo();
                     String codigoEquipoSeleccionar = null;
@@ -151,10 +170,14 @@ public class viewEquipos {
                     listarJugadores = controladorEquipo.jugadores.get(codigoJugadorSeleccionar);
                     System.out.println("Usted ha seleccionado el jugador: " + listarJugadores.getNombre());
                     equipoSeleccionado.addJugador(listarJugadores);
-                    
+                    ConsoleUtils.pause();
+
                     break;
                 
                 case 6:
+
+                    ConsoleUtils.cleanScreen();
+
                     
                     Equipo equipoEstadio = new Equipo();
                     Estadio listarEstadios = new Estadio();
@@ -186,6 +209,7 @@ public class viewEquipos {
                     System.out.println("Usted selecciono el estadio: " + listarEstadios.getNombre());
 
                     equipoEstadio.setEstadio(codEstadioSeleccionar);
+                    ConsoleUtils.pause();
 
                     break;
 
@@ -234,6 +258,8 @@ public class viewEquipos {
 
                 case 8:
 
+                ConsoleUtils.cleanScreen();
+
                 Equipo equipoPartido = new Equipo();
                 String codEquipoPartido = null;
                 System.out.println("LISTA EQUIPOS");
@@ -255,6 +281,8 @@ public class viewEquipos {
                             System.out.println("Equipo Local: " + partido.getEquipoLocal() + " - " + " Equipo Visitante: " + partido.getEquipoVisitante() );
                     }
                 }
+
+                ConsoleUtils.pause();
 
                 break;
 

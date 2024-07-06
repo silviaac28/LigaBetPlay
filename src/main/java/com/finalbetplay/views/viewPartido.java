@@ -10,6 +10,7 @@ import com.finalbetplay.Controller;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Partido;
+import com.finalbetplay.utils.ConsoleUtils;
 
 
 public class viewPartido {
@@ -22,6 +23,7 @@ public class viewPartido {
 
         while (true) {
 
+            ConsoleUtils.cleanScreen();
 
             System.out.println("\n-----MENÚ GESTION PARTIDOS-----\n");
 
@@ -37,6 +39,10 @@ public class viewPartido {
 
             switch (choice) {
                 case 1:
+
+                    ConsoleUtils.cleanScreen();
+
+
                     Partido partidos = new Partido();
                     Equipo equipos = new Equipo();
                     Estadio estadios = new Estadio();
@@ -118,10 +124,14 @@ public class viewPartido {
 
                     controladorPartido.partidos.put(codigoPartido, partidos);
                     System.out.println("Partido agregado exitosamente.");
+                    
+                    ConsoleUtils.pause();
 
                     break;
 
                 case 2:
+                    ConsoleUtils.cleanScreen();
+
                     Partido partidos1 = new Partido();
                     Equipo equipos1 = new Equipo();
                     Estadio estadios1 = new Estadio();
@@ -162,10 +172,14 @@ public class viewPartido {
                     System.out.println("Usted ha seleccionado el equipo: " + listarEquipos1.getNombre());
                     partidos1.setEquipoVisitante(listarEquipos1.getNombre());
 
-                 
+                    ConsoleUtils.pause();
+
+                    break;
 
 
                 case 4:
+                    ConsoleUtils.cleanScreen();
+
                     System.out.println("-------------------------");
                     System.out.println("LISTADO DE PARTIDOS:");
                     for (String codPartido : controladorPartido.partidos.keySet()) {
@@ -178,6 +192,9 @@ public class viewPartido {
                         System.out.println("Estadio: " + p.getEstadio());
                         System.out.println("-------------------------");
                     }
+
+                    ConsoleUtils.pause();
+
                     break;
 
                 case 5:

@@ -10,6 +10,7 @@ import com.finalbetplay.clases.Entrenador;
 import com.finalbetplay.clases.Equipo;
 import com.finalbetplay.clases.Estadio;
 import com.finalbetplay.clases.Jugador;
+import com.finalbetplay.clases.Lesion;
 import com.finalbetplay.clases.MedioComunicacion;
 import com.finalbetplay.clases.Partido;
 import com.finalbetplay.clases.Patrocinador;
@@ -39,6 +40,7 @@ public class Controller {
     public static Hashtable <String, MedioComunicacion> medioscomunicaciones = new Hashtable<>();
     public static Hashtable <String, Entrenador> entrenadores = new Hashtable<>();
     public static Hashtable <String, Arbitro> arbitros = new Hashtable<>();
+    public static Hashtable <String, Lesion> lesiones = new Hashtable<>();
 
 
 
